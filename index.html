@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PetCalm – Help Your Anxious Dog Live a Calmer Life 🐶💙</title>
+
+  <!-- Basic SEO -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="PetCalm helps anxious dogs feel safe and relaxed with calming beds, toys, and travel gear trusted by dog owners." />
+  <meta name="keywords"
+        content="dog anxiety, calming dog bed, dog travel carrier, stress relief dog toy, PetCalm" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Simple cache-buster for GitHub Pages -->
+  <script>
+    (function () {
+      const url = new URL(window.location.href);
+      if (!url.searchParams.has('v')) {
+        url.searchParams.set('v', Date.now());
+        window.location.replace(url.toString());
+      }
+    })();
+  </script>
+
+  <style>
+    /* GLOBAL */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1c1f2a;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, #26a9ff, #3ec5ff);
+      color: #fff;
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    .hero-left {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.18);
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      max-width: 420px;
+      opacity: 0.9;
+      margin-bottom: 18px;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      margin-bottom: 22px;
+      font-size: 14px;
+    }
+
+    .hero-bullets li {
+      margin-bottom: 6px;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .hero-bullets li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      font-size: 12px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: #fff;
+      color: #0077d6;
+      font-weight: 600;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .btn-ghost {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      background: transparent;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-note {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .hero-right {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 14px;
+      max-width: 320px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      color: #1c1f2a;
+    }
+
+    .hero-card img {
+      border-radius: 14px;
+      margin-bottom: 10px;
+      height: 210px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .hero-card-title {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-text {
+      font-size: 13px;
+      opacity: 0.8;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-price {
+      font-weight: 700;
+      font-size: 16px;
+      color: #0077d6;
+    }
+
+    /* WHY SECTION */
+    .section {
+      padding: 40px 0 24px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .section-eyebrow {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #0077d6;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: #555;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .why-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .why-card-title {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .why-card-text {
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* PRODUCTS SECTION */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 14px 14px 16px;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-card img {
+      border-radius: 14px;
+      margin-bottom: 10px;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .product-name {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .product-desc {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+
+    .product-price {
+      font-weight: 700;
+      font-size: 15px;
+      color: #0077d6;
+    }
+
+    .product-btn {
+      font-size: 13px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: none;
+      background: #0077d6;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .product-btn:hover {
+      background: #005ea7;
+    }
+
+    /* CTA SECTION */
+    .cta {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 36px 0;
+      margin-top: 24px;
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .cta-text {
+      max-width: 520px;
+    }
+
+    .cta-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .cta-sub {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 12px;
+    }
+
+    .cta-note {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #020617;
+      color: #cbd5f5;
+      font-size: 12px;
+      padding: 12px 16px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #60a5fa;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner {
+        flex-direction: column;
+      }
+
+      .hero-card {
+        max-width: 360px;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cta-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cta-text {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-title {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <div class="badge">
+            🐾 Trusted by loving dog owners
+          </div>
+
+          <h1 class="hero-title">
+            Help Your Anxious Dog Live a Calmer Life 🐶💙
+          </h1>
+
+          <p class="hero-subtitle">
+            PetCalm offers calming beds, toys, and travel solutions designed to reduce stress and make every day feel safe
+            and cozy for your dog.
+          </p>
+
+          <ul class="hero-bullets">
+            <li>Perfect for separation anxiety and restless sleepers</li>
+            <li>Soft, vet-inspired designs for maximum comfort</li>
+            <li>Fast worldwide shipping &amp; 24/7 support</li>
+          </ul>
+
+          <div class="hero-buttons">
+            <a href="#products">
+              <button class="btn-primary">Explore Calming Products</button>
+            </a>
+            <a href="#why">
+              <button class="btn-ghost">Why dog owners choose PetCalm →</button>
+            </a>
+          </div>
+
+          <p class="hero-note">
+            30-day comfort guarantee · Secure checkout · Loved by anxious pups 🐾
+          </p>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card">
+            <img
+              src="https://images.pexels.com/photos/5731863/pexels-photo-5731863.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Relaxed dog resting on a calming bed" />
+
+            <div class="hero-card-title">Calming Dog Starter Kit</div>
+            <div class="hero-card-text">
+              One cozy bed + anti-stress toy + travel harness – everything your dog needs to feel safe and calm.
+            </div>
+            <div class="hero-card-price">$89.99</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- WHY PETCALM -->
+    <main>
+      <section id="why" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Why Choose PetCalm?</div>
+            <h2 class="section-title">Science-inspired comfort for anxious dogs</h2>
+            <p class="section-sub">
+              Our calming products are recommended by dog owners who want their best friend to feel safe during storms,
+              fireworks, travel, and moments of separation.
+            </p>
+          </div>
+
+          <div class="why-grid">
+            <div class="why-card">
+              <h3 class="why-card-title">Designed for dog anxiety</h3>
+              <p class="why-card-text">
+                Every product is selected to reduce stress signals like pacing, whining, and restlessness – especially for
+                rescue dogs and sensitive pups.
+              </p>
+            </div>
+            <div class="why-card">
+              <h3 class="why-card-title">Soft, safe &amp; durable</h3>
+              <p class="why-card-text">
+                Plush fabrics, secure stitching, and pet-safe materials that stand up to daily use while staying cozy and
+                gentle on the skin.
+              </p>
+            </div>
+            <div class="why-card">
+              <h3 class="why-card-title">Perfect for home &amp; travel</h3>
+              <p class="why-card-text">
+                From calming beds to anti-anxiety travel carriers, your dog can feel at home on the couch, in the car, or
+                on vacation.
+              </p>
+            </div>
+            <div class="why-card">
+              <h3 class="why-card-title">Made for loving dog parents</h3>
+              <p class="why-card-text">
+                Easy-to-clean designs, clear sizing guides, and responsive support so you can focus on cuddles instead of
+                stress.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BEST-SELLING PRODUCTS -->
+      <section id="products" class="section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-eyebrow">Best-Selling Calming Products</div>
+            <h2 class="section-title">Create a safe, cozy space your dog loves</h2>
+            <p class="section-sub">
+              Start with one calming essential – or build a complete anti-anxiety kit for your furry friend.
+            </p>
+          </div>
+
+          <div class="products-grid">
+            <!-- PRODUCT 1 -->
+            <article class="product-card">
+              <img
+                src="https://images.pexels.com/photos/3299900/pexels-photo-3299900.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Dog sleeping in a round calming bed" />
+              <h3 class="product-name">Calming Dog Bed</h3>
+              <p class="product-desc">
+                Ultra-soft donut bed with raised rim that hugs your dog and helps ease anxiety during naps and nighttime.
+              </p>
+              <div class="product-footer">
+                <span class="product-price">$49.99</span>
+                <button class="product-btn">View details</button>
+              </div>
+            </article>
+
+            <!-- PRODUCT 2 -->
+            <article class="product-card">
+              <img
+                src="https://images.pexels.com/photos/7210261/pexels-photo-7210261.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Dog playing with a soft calming toy" />
+              <h3 class="product-name">Stress Relief Toy</h3>
+              <p class="product-desc">
+                Chew-friendly toy designed to keep your dog busy, redirect nervous energy, and make alone-time easier.
+              </p>
+              <div class="product-footer">
+                <span class="product-price">$19.99</span>
+                <button class="product-btn">View details</button>
+              </div>
+            </article>
+
+            <!-- PRODUCT 3 -->
+            <article class="product-card">
+              <img
+                src="https://images.pexels.com/photos/7210260/pexels-photo-7210260.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Two dogs travelling happily in nature" />
+              <h3 class="product-name">Anti-Anxiety Travel Carrier</h3>
+              <p class="product-desc">
+                Cozy, ventilated carrier that helps your dog feel protected in the car, on trains, or at the vet.
+              </p>
+              <div class="product-footer">
+                <span class="product-price">$79.99</span>
+                <button class="product-btn">View details</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta-inner">
+        <div class="cta-text">
+          <h2 class="cta-title">Ready to give your anxious dog a calm, happy life?</h2>
+          <p class="cta-sub">
+            Start with one calming product today and watch your dog slowly relax, sleep deeper, and enjoy daily moments
+            again.
+          </p>
+          <p class="cta-note">
+            Tip for you (عثمان 😄): you can connect this page later مع Shopify / WooCommerce أو miahapp.pet وتخليها صفحة
+            هبوط رسمية لنّيش القلق عند الكلاب.
+          </p>
+        </div>
+
+        <a href="#products">
+          <button class="btn-primary">Start with our best-sellers</button>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2025 PetCalm · Built with love for anxious dogs 🐾 · Landing page hosted on GitHub Pages
+    </footer>
+  </div>
+</body>
+</html>
