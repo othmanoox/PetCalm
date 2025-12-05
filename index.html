@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PetCalm - Help Your Anxious Dog Live a Calmer Life</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="PetCalm helps your anxious dog feel safe and relaxed with calming beds, smart toys, and travel accessories." />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body{background:linear-gradient(135deg,#0f172a,#020617);color:#e5e7eb;line-height:1.6}
+    a{text-decoration:none}
+    .page{max-width:1100px;margin:0 auto;padding:24px 16px 40px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo-circle{width:32px;height:32px;border-radius:999px;background:#22c55e;display:flex;align-items:center;justify-content:center;font-weight:700;color:#022c22}
+    nav a{margin-left:18px;font-size:14px;color:#cbd5f5;opacity:.85}
+    nav a.cta{padding:8px 16px;border-radius:999px;background:#22c55e;color:#022c22;font-weight:600}
+    .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center;margin-bottom:40px}
+    .pill{display:inline-flex;align-items:center;gap:8px;font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid #22c55e33;color:#a5b4fc;background:#020617aa;margin-bottom:10px}
+    .pill span.badge{background:#22c55e22;color:#22c55e;font-weight:600;padding:2px 8px;border-radius:999px;font-size:11px}
+    h1{font-size:38px;line-height:1.1;margin-bottom:12px;color:#f9fafb}
+    .sub{font-size:15px;color:#cbd5f5;margin-bottom:18px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:10px}
+    .btn-primary{background:#22c55e;color:#022c22;padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px}
+    .btn-ghost{border-radius:999px;border:1px solid #64748b;padding:9px 16px;font-size:14px;color:#e5e7eb;background:transparent}
+    .trust{font-size:12px;color:#9ca3af}
+    .hero-card{background:radial-gradient(circle at top,#22c55e33,#020617);border-radius:20px;padding:16px;border:1px solid #22c55e33;box-shadow:0 18px 45px #000000dd}
+    .hero-card-inner{position:relative;border-radius:16px;overflow:hidden;background:#0b1120}
+    .dog-img{background-image:url("https://images.pexels.com/photos/5731862/pexels-photo-5731862.jpeg?auto=compress&cs=tinysrgb&w=800");background-size:cover;background-position:center;height:230px}
+    .card-tag{position:absolute;left:14px;bottom:14px;background:#020617dd;padding:8px 10px;border-radius:12px;border:1px solid #22c55e55;font-size:11px;display:flex;flex-direction:column;gap:2px}
+    .card-tag strong{color:#f9fafb;font-size:12px}
+    .card-tag span{color:#cbd5f5}
+    .stars{color:#facc15;font-size:12px}
+    .card-floating{position:absolute;right:14px;top:14px;background:#22c55e;font-size:11px;color:#022c22;padding:6px 10px;border-radius:999px;font-weight:600}
+    .badge-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+    .mini-badge{font-size:11px;padding:3px 8px;border-radius:999px;border:1px solid #22c55e33;color:#a5b4fc;background:#020617dd}
+    .section{margin-bottom:40px}
+    h2{font-size:22px;margin-bottom:12px;color:#f9fafb}
+    .benefits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .benefit{background:#020617aa;border-radius:16px;padding:12px;border:1px solid #1e293b}
+    .benefit h3{font-size:13px;margin-bottom:4px;color:#e5e7eb}
+    .benefit p{font-size:12px;color:#9ca3af}
+    .products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .product{background:#020617aa;border-radius:16px;border:1px solid #1e293b;padding:12px}
+    .tag{font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:#a5b4fc;margin-bottom:4px}
+    .product h3{font-size:14px;margin-bottom:4px}
+    .price{font-size:13px;color:#22c55e;font-weight:600;margin-bottom:4px}
+    .note{font-size:11px;color:#9ca3af}
+    .mission{background:#020617aa;border-radius:18px;border:1px solid #1e293b;padding:16px;display:grid;grid-template-columns:2.1fr 1.3fr;gap:18px}
+    .mission p{font-size:13px;color:#cbd5f5}
+    .stat{font-size:13px;margin-bottom:6px}
+    .stat span{color:#22c55e;font-weight:700}
+    .newsletter{background:#020617aa;border-radius:18px;border:1px solid #1e293b;padding:16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+    .newsletter form{display:flex;flex-wrap:wrap;gap:10px}
+    .newsletter input{padding:8px 10px;border-radius:999px;border:1px solid #334155;background:#020617;color:#e5e7eb;font-size:13px;min-width:220px}
+    footer{margin-top:26px;font-size:11px;color:#64748b;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .mission{grid-template-columns:1fr}
+      .benefits{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .products{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:640px){
+      h1{font-size:30px}
+      .benefits,.products{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:10px}
+      .hero-card{order:-1}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <div class="logo-circle">P</div>
+        <div>
+          <div style="font-weight:700;font-size:15px">PetCalm</div>
+          <div style="font-size:11px;color:#9ca3af">For anxious & sensitive dogs</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#benefits">How it works</a>
+        <a href="#products">Calming products</a>
+        <a href="#mission">Our mission</a>
+        <a href="#newsletter" class="cta">Get 10% Off</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <div class="pill">
+            <span class="badge">New</span>
+            Vet-inspired calming kit for dogs with anxiety
+          </div>
+          <h1>Help Your Anxious Dog Live a Calmer Life</h1>
+          <p class="sub">
+            PetCalm combines calming beds, smart toys, and travel accessories to help your dog feel safe, relaxed,
+            and closer to you — at home or on the road.
+          </p>
+          <div class="hero-actions">
+            <a href="#products" class="btn-primary">Shop Calming Solutions</a>
+            <a href="#mission" class="btn-ghost">Why PetCalm works</a>
+          </div>
+          <p class="trust">
+            Trusted by <strong>2,500+ dog parents</strong> with anxiety-prone pups 🐾
+          </p>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-inner">
+            <div class="dog-img"></div>
+            <div class="card-tag">
+              <strong>“He finally sleeps through the night.”</strong>
+              <span>Rex, 3-year-old rescue dog • Before PetCalm he barked at every noise.</span>
+              <div class="stars">★★★★★ <span style="color:#a5b4fc">4.9/5 from 800+ reviews</span></div>
+            </div>
+            <div class="card-floating">Calm in 7 days or money back</div>
+          </div>
+          <div class="badge-row">
+            <div class="mini-badge">Reduces barking & pacing</div>
+            <div class="mini-badge">Helps separation anxiety</div>
+            <div class="mini-badge">Perfect for travel crates</div>
+          </div>
+        </aside>
+      </section>
+
+      <!-- BENEFITS -->
+      <section id="benefits" class="section">
+        <h2>Why dog parents choose PetCalm</h2>
+        <div class="benefits">
+          <div class="benefit">
+            <h3>1. Designed for anxious dogs</h3>
+            <p>Raised edges create a safe “den” feeling that lowers stress and helps sensitive dogs self-soothe.</p>
+          </div>
+          <div class="benefit">
+            <h3>2. Calming textures</h3>
+            <p>Ultra-soft fabric and memory foam support joints and help restless pups finally relax and nap.</p>
+          </div>
+          <div class="benefit">
+            <h3>3. Travel-friendly</h3>
+            <p>Folds in seconds and fits your car, crate, or sofa so your dog keeps the same safe spot everywhere.</p>
+          </div>
+          <div class="benefit">
+            <h3>4. Easy to clean</h3>
+            <p>Removable, machine-washable cover that stands up to zoomies, fur, and muddy paws.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section id="products" class="section">
+        <h2>Choose the perfect calming setup</h2>
+        <div class="products">
+          <article class="product">
+            <div class="tag">Best for all-day comfort</div>
+            <h3>PetCalm Deep-Sleep Bed</h3>
+            <p class="price">From $69 • Free shipping</p>
+            <p class="note">
+              Orthopedic base + donut shape that hugs your dog and reduces night-time pacing.
+            </p>
+          </article>
+          <article class="product">
+            <div class="tag">For hyper & bored pups</div>
+            <h3>PetCalm Smart Soothing Toy</h3>
+            <p class="price">$39 • USB rechargeable</p>
+            <p class="note">
+              Gentle vibration & heartbeat sound to comfort puppies and dogs with separation anxiety.
+            </p>
+          </article>
+          <article class="product">
+            <div class="tag">For car & vet visits</div>
+            <h3>PetCalm Travel Bundle</h3>
+            <p class="price">$99 • Save 15%</p>
+            <p class="note">
+              Compact calming bed + seat belt harness so your dog feels safe on every trip.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- MISSION -->
+      <section id="mission" class="section">
+        <div class="mission">
+          <div>
+            <h2>Our mission: less stress, more tail wags</h2>
+            <p>
+              At PetCalm, we know how hard it is to see your dog shaking, whining, or barking at every sound.
+              That’s why we test every product with real dog parents who live with anxious pups every day.
+              We focus on calming design, safe materials, and small details that help your dog feel close to you.
+            </p>
+          </div>
+          <div>
+            <p class="stat"><span>87%</span> of customers say their dog is calmer at night after 2 weeks.</p>
+            <p class="stat"><span>73%</span> report fewer “panic bark” episodes during storms or fireworks.</p>
+            <p class="note">Results based on customer survey of 600+ PetCalm families.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER -->
+      <section id="newsletter" class="section">
+        <div class="newsletter">
+          <div>
+            <h2>Get 10% off your first calming kit</h2>
+            <p style="font-size:13px;color:#cbd5f5">
+              Join our dog-parent list for proven tips to reduce anxiety, plus early access to new PetCalm products.
+            </p>
+          </div>
+          <form>
+            <input type="email" placeholder="Enter your email" />
+            <button type="submit" class="btn-primary">Send me the discount</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2025 PetCalm. Made with love for anxious dogs 🐾</span>
+      <span>Not veterinary advice. Always talk to your vet about your dog’s health.</span>
+    </footer>
+  </div>
+</body>
+</html>
